@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import { HomePage } from './index.style'
 import { Text } from 'react-native'
 
-export default function HomePage() {
+export default function() {
   return (
-    <Text>
-      Home Page
-    </Text>
+    <HomePage>
+      <Text>
+        Home Page
+      </Text>
+    </HomePage>
   )
 }
