@@ -17,16 +17,18 @@ export interface AuthStates {
 }
 
 interface LoginAction {
-	type: typeof actionTypes.LOGIN_REQUEST,
-	payload: any
+	type: typeof actionTypes.LOGIN_REQUEST;
+	payload: any;
 }
 
 interface LogoutAction { 
-	type: typeof actionTypes.LOGOUT,
+	type: typeof actionTypes.LOGOUT;
+	payload?: any;
 }
 
 interface CheckAuthorizationAction { 
-	type: typeof actionTypes.CHECK_AUTHORIZATION,
+	type: typeof actionTypes.CHECK_AUTHORIZATION;
+	payload?: any;
 }
 // INTERFACES END
 
