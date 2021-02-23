@@ -1,14 +1,23 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import { View, Text } from 'react-native';
-
+import React, { Suspense } from 'react';
 import Router from './src/navigation';
-import { store } from './src/redux/store';
+//Context Auth
+import { Provider } from './src/contexts/App'
+//Context Auth END
+
+//COMMON COMPONENTS
+import Loader from './src/components/Common/Loader'
+//COMMON COMPONENTS END
+
+// TYPES
+type IStates = {
+}
 
 function App() {
   return (
-    <Provider store={store}>
-      <Router/>
+    <Provider>
+      <Suspense fallback={<Loader/>}>
+        <Router/>
+      </Suspense>
     </Provider>
   )
 };

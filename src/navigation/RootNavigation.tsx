@@ -1,21 +1,22 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Chat App</Text>
-    </View>
-  );
-}
+import Routes from './routes'
 
 const Stack = createStackNavigator();
 
 function RootNavigation() {
   return (
     <Stack.Navigator>
-    	<Stack.Screen name="Home" component={HomeScreen} />
+      {Routes.map(({ options, name, component, ...props }, i) => (
+        <Stack.Screen 
+          {...props}
+          key={i}
+          name={name}
+          options={options}
+          component={component}
+        />
+      ))}
     </Stack.Navigator>
   );
 }
